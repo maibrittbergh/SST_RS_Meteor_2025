@@ -10,7 +10,6 @@ Created on Tue Jun 24 16:53:35 2025
 # -*- coding: utf-8 -*-
 """
 File to read and visualize the sounding data. 
-Please specify the date and time
 
 @author: maibrittberghofer
 """
@@ -25,22 +24,15 @@ from metpy.plots import SkewT
 from metpy.units import units
 from eccodes import codes_bufr_new_from_file, codes_set, codes_get_array, codes_release
 import numpy as np
-from pathlib import Path
-import os
-
-dir_path = os.getcwd()  # current working directory
-
-print(dir_path)
-date_sounding="20250616"
-time_sounding_utc="12UTC"
 
 
-filename = os.path.join(dir_path, f"weatherballoon_data/{date_sounding}_{time_sounding_utc}_Bufr_309057_all.dat")
+#enter balloon specifications 
 
 
 
-
-
+filename = '/Users/maibrittberghofer/Desktop/Arbeit /Meteor/Sounding Data/20250616_12UTC_Bufr_309057_all.dat'
+date="20250616"
+time="12UTC"
 
 
 data = {
@@ -133,7 +125,7 @@ skew.ax.legend()
 
 plt.xlabel("Temperature [°C]")
 plt.ylabel("Pressure [hPa]")
-plt.title(f'Skew-T log-P: {date_sounding} at {time_sounding_utc}')
+plt.title(f'Skew-T log-P: {date} at {time}')
 plt.tight_layout()
 plt.show()
 
