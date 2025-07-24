@@ -1,3 +1,5 @@
-Station_ID,SST - SML Mean_Diff_1s (°C),SST - SML Std_Diff_1s (°C) ,SST - SML Mean_Diff_1min (°C),SST - SML Std_Diff_1min (°C)
+Station_ID,SST-SML Mean_Diff_1s (°C),SST-SML Std_Diff_1s (°C) ,SST-SML Mean_Diff_1min (°C),SST-SML Std_Diff_1min (°C)
 A1,-0.33555,0.08565,-0.33568,0.06451
-A2,-0.30114,0.10395,-0.30102,0.08415
+A2,-0.30113,0.10452,-0.30102,0.08415
+A5,-0.08224,0.08803,-0.08112,0.06488
+A7,-1.31023,0.17755,-1.30692,0.16327
