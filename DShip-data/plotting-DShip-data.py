@@ -113,6 +113,27 @@ def plot_DShip_data(file_name, CP_front_passage):
              horizontalalignment='left', 
              color='red')
     
+    if CP_front_passage=='2025-07-16 10:10:00': 
+        # add vertical lines for radiosonde launches
+        plt.axvline(x=pd.to_datetime('2025-07-16 10:08:00'), color='black', linestyle='--', linewidth=2)
+        axs[0].text(pd.to_datetime('2025-07-16 10:08:00')+pd.Timedelta(seconds=30), max(T), 'Radiosonde no. 1',
+                 verticalalignment='top',
+                 horizontalalignment='left', 
+                 color='black', zorder=10)
+        plt.axvline(x=pd.to_datetime('2025-07-16 10:26:00'), color='black', linestyle='--', linewidth=2)
+        axs[0].text(pd.to_datetime('2025-07-16 10:26:00')+pd.Timedelta(seconds=30), max(T), 'Radiosonde no. 2',
+                 verticalalignment='top',
+                 horizontalalignment='left', 
+                 color='black', zorder=10)
+    
+    if CP_front_passage=='2025-07-16 18:59:00': 
+        # add vertical lines for radiosonde launches
+        plt.axvline(x=pd.to_datetime('2025-07-16 19:24:00'), color='black', linestyle='--', linewidth=2)
+        axs[0].text(pd.to_datetime('2025-07-16 19:24:00')+pd.Timedelta(seconds=-30), min(T), 'Radiosonde no. 2',
+                 verticalalignment='bottom',
+                 horizontalalignment='right', 
+                 color='black', zorder=10)
+    
     # show date in upper left corner
     axs[0].text(0.01, 0.96, time[0].strftime('%Y-%m-%d'), transform=axs[0].transAxes,
                 fontsize=10, verticalalignment='top', horizontalalignment='left')
@@ -145,6 +166,27 @@ def plot_DShip_data(file_name, CP_front_passage):
              verticalalignment='bottom',
              horizontalalignment='left', 
              color='red', zorder=10)
+    
+    if CP_front_passage=='2025-07-16 10:10:00': 
+        # add vertical lines for radiosonde launches
+        plt.axvline(x=pd.to_datetime('2025-07-16 10:08:00'), color='black', linestyle='--', linewidth=2)
+        axs[1].text(pd.to_datetime('2025-07-16 10:08:00')+pd.Timedelta(seconds=30), max(u), 'Radiosonde no. 1',
+                 verticalalignment='top',
+                 horizontalalignment='left', 
+                 color='black', zorder=10)
+        plt.axvline(x=pd.to_datetime('2025-07-16 10:26:00'), color='black', linestyle='--', linewidth=2)
+        axs[1].text(pd.to_datetime('2025-07-16 10:26:00')+pd.Timedelta(seconds=30), max(u), 'Radiosonde no. 2',
+                 verticalalignment='top',
+                 horizontalalignment='left', 
+                 color='black', zorder=10)
+        
+    if CP_front_passage=='2025-07-16 18:59:00': 
+        # add vertical lines for radiosonde launches
+        plt.axvline(x=pd.to_datetime('2025-07-16 19:24:00'), color='black', linestyle='--', linewidth=2)
+        axs[1].text(pd.to_datetime('2025-07-16 19:24:00')+pd.Timedelta(seconds=-30), min(u), 'Radiosonde no. 2',
+            verticalalignment='bottom', 
+            horizontalalignment='right', 
+            color='black', zorder=10)
     
     plt.savefig('plots/'+Path(file_name).stem+'.png', dpi=1200) # save figure
     plt.show()
